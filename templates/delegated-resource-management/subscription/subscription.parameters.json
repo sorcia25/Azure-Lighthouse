@@ -3,37 +3,43 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "mspOfferName": {
-            "value": "Relecloud Managed Services"
+            "value": "Secnesys - Azure Managed Services"
         },
         "mspOfferDescription": {
-            "value": "Relecloud Managed Services"
+            "value": "En Secnesys estamos comprometidos a brindar un servicio de excelencia a nuestros clientes.<BR>Nuestro monitoreo constante y el conocimiento a detalle de la operación de nuestros clientes hace posible la implementación de las mejores recomendaciones operativas, así como posibles ahorros en costos de infraestructura."
         },
         "managedByTenantId": {
-            "value": "<insert managing tenant id>"
+            "value": "b9fafec0-01e1-4dcc-ab3b-efdd85a37bf5"
         },
         "authorizations": {
             "value": [
-                { 
-                    "principalId": "00000000-0000-0000-0000-000000000000", 
-                    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
-                    "principalIdDisplayName": "PIM_Group" 
-                }, 
-                { 
-                    "principalId": "00000000-0000-0000-0000-000000000000", 
-                    "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
-                    "principalIdDisplayName": "PIM_Group"
-                    
+                {
+					"_comment": "Owner Role"
+					"principalId": "b018e696-ac50-4cca-b756-a83e619c2375",
+                    "principalIdDisplayName": "Tier 3 IT Experts (Owner)",
+                    "roleDefinitionId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635" 
+                },
+				{
+					"_comment": "Contributor Role"
+					"principalId": "c5ee3e11-1dc2-4195-a7c3-817310b4fc36",
+                    "principalIdDisplayName": "Tier 2 IT Technicians (Contribuitor)",
+                    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c" 
                 },
                 {
-                    "principalId": "00000000-0000-0000-0000-000000000000",
-                    "principalIdDisplayName": "PIM_Group",
-                    "roleDefinitionId": "18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
-                    "delegatedRoleDefinitionIds": [
-                        "b24988ac-6180-42a0-ab88-20f7382dd24c",
-                        "92aaf0da-9dab-42b6-94a3-d43ce8d16293"
-                    ]
+					"_comment": "Reader Role"
+					"principalId": "a68196bf-80bc-4306-8979-38440d0cda1e",
+                    "principalIdDisplayName": "Tier 1 Support Team (Reader)",
+                    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
+                },
+				{ 
+                    "_comment": "Managed Services Registration assignment Delete Role"
+					"principalId": "b8c52a78-5ae7-4737-bb31-0110b465cca9", 
+                    "principalIdDisplayName": "MSP Operators"
+					"roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                    
+                    
                 }
-                    ]
-                }                
+            ]
         }
+    }
 }
