@@ -10,7 +10,7 @@ Este repositorio contiene plantillas que ayudarán a nuestros clientes a enrolar
 
 Las plantillas mostradas a continuación pueden ser utilizadas para [Hacer el onboarding de un cliente a Azure Lighthouse](https://docs.microsoft.com/en-us/azure/lighthouse/how-to/onboard-customer). Se pueden utilizar estas plantillas para hacer la implementación manual, o usar el botón "Deploy to Azure" para implementarlas directamenteen el portal de Azure del cliente.
 
-# Deploy to Azure buttons
+# Deploy to Azure
 
 Name | Description   | Auto-deploy   | Manual deploy |
 -----| ------------- |--------------- |------- 
