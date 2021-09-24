@@ -1,12 +1,16 @@
 
 # Microsoft Azure Lighthouse
 
-Azure Lighthouse provides capabilities to perform cross-tenant management at scale.  We do this by providing you the ability to view and manage multiple customers from a single context. When you log into Azure, you can see all of your customers who you are managing through Azure Lighthouse. [Learn more](https://azure.com/lighthouse).
+Azure Lighthouse permite la administración de varios Tenants, lo que proporciona no solo mayores prestaciones de automatización y escalabilidad, sino también una mejor gobernanza de recursos y Tenants.
 
-This repository contains samples to help you use Azure Resource Manager to configure [Azure delegated resource management](https://docs.microsoft.com/azure/lighthouse/concepts/azure-delegated-resource-management) and to configure monitoring and management of customer environments.
+Con Azure Lighthouse, los proveedores de servicios pueden ofrecer servicios administrados mediante herramientas completas y potentes integradas en la plataforma Azure. Los clientes mantienen el control sobre quién tiene acceso a su Tenant, a qué recursos se puede acceder y qué acciones se pueden realizar. Esta oferta también puede ayudar a las organizaciones de TI empresariales a administrar recursos en varios Tenants.
+. [Conocer más](https://azure.com/lighthouse).
 
-The templates shown below can be used to [onboard a customer to Azure Lighthouse](https://docs.microsoft.com/en-us/azure/lighthouse/how-to/onboard-customer). You can deploy these manually, or use the "Deploy to Azure" buttons to deploy directly in the Azure portal.
-# Deploy to Azure buttons
+Este repositorio contiene plantillas que ayudarán a nuestros clientes a enrolarse mediante [Azure delegated resource management](https://docs.microsoft.com/azure/lighthouse/concepts/azure-delegated-resource-management) y a configurar el monitoreo y la administración de los entornos del cleinte.
+
+Las plantillas mostradas a continuación pueden ser utilizadas para [Hacer el onboarding de un cliente a Azure Lighthouse](https://docs.microsoft.com/en-us/azure/lighthouse/how-to/onboard-customer). Se pueden utilizar estas plantillas para hacer la implementación manual, o usar el botón "Deploy to Azure" para implementarlas directamenteen el portal de Azure del cliente.
+
+# Deploy to Azure
 
 Name | Description   | Auto-deploy   | Manual deploy |
 -----| ------------- |--------------- |------- 
