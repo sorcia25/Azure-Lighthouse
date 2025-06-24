@@ -1,0 +1,123 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mspOfferName": {
+            "type": "string",
+			"defaultValue": "ONESEC Sentinel Managed Services",
+            "metadata": {
+                "description": "Specify the name of the offer from the Managed Service Provider"
+            }
+        },
+        "mspOfferDescription": {
+            "type": "string",
+			"defaultValue": "Provides a managed service capability for Microsoft Sentinel by ONESEC",
+            "metadata": {
+                "description": "Name of the Managed Service Provider offering"
+            }
+        },
+        "managedByTenantId": {
+            "type": "string",
+			"defaultValue": "b9fafec0-01e1-4dcc-ab3b-efdd85a37bf5",
+            "metadata": {
+                "description": "Specify the tenant id of the Managed Service Provider"
+            }
+        },
+        "authorizations": {
+            "type": "array",
+			"defaultValue": [
+                {
+					"principalId": "75c5de52-36c3-446d-8b41-4cfb90967584",
+                    "principalIdDisplayName": "MDR T3 - Threat Hunter",
+                    "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade" 
+                },
+				{ 
+					"principalId": "75c5de52-36c3-446d-8b41-4cfb90967584", 
+                    "principalIdDisplayName": "MDR T3 - Threat Hunter",
+					"roleDefinitionId": "87a39d53-fc1b-424a-814c-f7e04687dc9e"
+                },
+				{ 
+					"principalId": "75c5de52-36c3-446d-8b41-4cfb90967584", 
+                    "principalIdDisplayName": "MDR T3 - Threat Hunter",
+					"roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46"
+                },
+				{ 
+					"principalId": "75c5de52-36c3-446d-8b41-4cfb90967584", 
+                    "principalIdDisplayName": "MDR T3 - Threat Hunter",
+					"roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                },
+                {
+					"principalId": "3db7ed2c-1bbf-4b7e-b5f0-0427a0b65177",
+                    "principalIdDisplayName": "MDR T2 - Analyst",
+                    "roleDefinitionId": "3e150937-b8fe-4cfb-8069-0eaf05ecd056"
+                },
+                {
+					"principalId": "3db7ed2c-1bbf-4b7e-b5f0-0427a0b65177",
+                    "principalIdDisplayName": "MDR T2 - Analyst",
+                    "roleDefinitionId": "f4c81013-99ee-4d62-a7ee-b3f1f648599a"
+                },
+				{
+					"principalId": "3db7ed2c-1bbf-4b7e-b5f0-0427a0b65177",
+                    "principalIdDisplayName": "MDR T2 - Analyst",
+                    "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                },
+                {
+					"principalId": "86e1c9a8-f96c-411c-a2e4-c76362a69aeb",
+                    "principalIdDisplayName": "MDR T1 - Analyst",
+                    "roleDefinitionId": "8d289c81-5878-46d4-8554-54e1e3d8b5cb"
+                },
+                {
+					"principalId": "86e1c9a8-f96c-411c-a2e4-c76362a69aeb",
+                    "principalIdDisplayName": "MDR T1 - Analyst",
+                    "roleDefinitionId": "51d6186e-6489-4900-b93f-92e23144cca5"
+                },
+{
+					"principalId": "86e1c9a8-f96c-411c-a2e4-c76362a69aeb",
+                    "principalIdDisplayName": "MDR T1 - Analyst",
+                    "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                }				
+            ],
+            "metadata": {
+                "description": "Specify an array of objects, containing tuples of Azure Active Directory principalId, a Azure roleDefinitionId, and an optional principalIdDisplayName. The roleDefinition specified is granted to the principalId in the provider's Active Directory and the principalIdDisplayName is visible to customers."
+            }
+        }              
+    },
+    "variables": {
+        "mspRegistrationName": "[guid(parameters('mspOfferName'))]",
+        "mspAssignmentName": "[guid(parameters('mspOfferName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.ManagedServices/registrationDefinitions",
+            "apiVersion": "2019-06-01",
+            "name": "[variables('mspRegistrationName')]",
+            "properties": {
+                "registrationDefinitionName": "[parameters('mspOfferName')]",
+                "description": "[parameters('mspOfferDescription')]",
+                "managedByTenantId": "[parameters('managedByTenantId')]",
+                "authorizations": "[parameters('authorizations')]"
+            }
+        },
+        {
+            "type": "Microsoft.ManagedServices/registrationAssignments",
+            "apiVersion": "2019-06-01",
+            "name": "[variables('mspAssignmentName')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+            ],
+            "properties": {
+                "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+            }
+        }
+    ],
+    "outputs": {
+        "mspOfferName": {
+            "type": "string",
+            "value": "[concat('Managed by', ' ', parameters('mspOfferName'))]"
+        },
+        "authorizations": {
+            "type": "array",
+            "value": "[parameters('authorizations')]"
+        }
+    }
+}
