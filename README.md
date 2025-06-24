@@ -14,7 +14,7 @@ Las plantillas mostradas a continuación pueden ser utilizadas para [Hacer el on
 
 Name | Description   | Auto-deploy   | Manual deploy |
 -----| ------------- |--------------- |------- 
-| ONESEC Sentinel - Subscription Deployment | Inscribir Lighthouse | [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSorcia25%2FAzure-Lighthouse%2Fmain%2Ftemplates%2Fonesec-subscription-deployment%2FonesecSubscriptionDeployment.json) | [templates](https://github.com/Sorcia25/Azure-Lighthouse-samples/tree/main/templates/onesec-subscription-deployment) |
+| ONESEC Sentinel - Subscription Deployment | Inscribir Lighthouse | [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSorcia25%2FAzure-Lighthouse%2Fmain%2Ftemplates%2Fonesec-subscription-deployment%2FonesecSubscriptionDeployment.json) | [templates](https://github.com/Sorcia25/Azure-Lighthouse/tree/main/templates/onesec-subscription-deployment) |
 
 
 **Special Instructions (for MSPs):**
